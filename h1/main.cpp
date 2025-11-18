@@ -24,6 +24,9 @@ int retSum(int luku1, int luku2){
 }
 
 double retDiv(double luku1, double luku2){
+    if (luku2 == 0){
+        throw runtime_error("jakaja ei saa olla nolla!");
+    }
     double result = luku1 /luku2;
     return result;
 }
@@ -43,9 +46,6 @@ int main()
     cout << "Luvun 1 ja luvun 2 summa on " << retSum(a,b) << endl;
 
     try {
-        if (b == 0){
-            throw runtime_error("jakaja ei saa olla nolla!");
-        }
         double result = retDiv(a,b);
         cout << fixed << setprecision(2);
         cout << "Luvun 1 ja luvun 2 osamäärä on " << result << endl;
